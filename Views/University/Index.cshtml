@@ -1,0 +1,34 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Students</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Average Score</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Score</td>
+                <td>@student.Age</td>
+                <td>
+                <!-- Кнопка редактирования -->
+                <a class="btn btn-primary" href="@Url.Action("Edit", "studs", new { id = student.Id })">Редактировать</a>
+                
+                <!-- Кнопка удаления -->
+                    <a class="btn btn-danger" href="@Url.Action("Delete", "studs", new { id = student.Id })">Удалить</a>
+            </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

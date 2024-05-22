@@ -1,0 +1,40 @@
+﻿
+@model UniversityApp.Models.Student
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить запись?</h3>
+<div>
+    <h4>Студент</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(stud => stud.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(stud => stud.Name)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(stud => stud.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(stud => stud.Age)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(stud => stud.Score)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(stud => stud.Score)
+        </dd>
+    </dl>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+        </div>
+    </form>
+</div>
